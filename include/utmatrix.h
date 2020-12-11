@@ -157,7 +157,7 @@ TVector<ValType> TVector<ValType>::operator*(const ValType &val)
 template <class ValType> // сложение
 TVector<ValType> TVector<ValType>::operator+(const TVector<ValType> &v)
 {
-    if (Size != v.Size) throw "not equal sizes of vectors";
+    if (Size != v.Size) throw  std::logic_error ("not equal sizes of vectors");
     TVector<ValType> temp(Size, StartIndex);
     for (int i = 0; i < Size; i++)
         temp.pVector[i] = pVector[i] + v.pVector[i];
