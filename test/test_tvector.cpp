@@ -84,10 +84,7 @@ TEST(TVector, can_assign_vector_to_itself)
 TEST(TVector, can_assign_vectors_of_equal_size)
 {
 	TVector<int> v(5), v2(5);
-	//for (int i = 0; i < 5; i++)
-		//v[i] = 5;
-	//for (int i = 0; i < 5; i++)
-		//v2[i] = 10;
+	
 	v = v2;
 	EXPECT_EQ(1, v == v2);
 }
@@ -192,13 +189,7 @@ TEST(TVector, cant_add_vectors_with_not_equal_size)
 TEST(TVector, can_subtract_vectors_with_equal_size)
 {
 	TVector<int> v(2), v2(2);
-	/*for (int i = 0; i < 2; i++)
-	{
-		v[i] = i + 1; v2[i] = i + 2;
-	}
-	TVector<int> res_ex(2);
-	for (int i = 0; i < 2; i++)
-		res_ex[i] = 1;*/
+	
 	v[0] = 1; v[1] = 2;
 	v2[0] = 2; v2[1] = 3;
 	TVector<int> res_ex(2);
