@@ -252,7 +252,16 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
-    return TVector<TVector<ValType>>::operator+(mt);
+    if (Size != mt.GetSize()) throw logic_error("Mitrix sizes rn't the same");
+    
+    TMatrix<ValType> temp;
+    temp = *this;
+    
+    for (int i = 0; i < Size; i++)
+    {
+        temp.pVector[i] = temp.pVector[i] + mt.pVector[i];
+    }
+    return temp;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // вычитание
